@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musify - Invite</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #ff72ba;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        nav a {
+            font-family: 'Pacifico', cursive;
+            color: white;
+            font-size: 1.8em;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #ffddc1;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 80px 20px 20px;
+            min-height: 100vh;
+        }
+
+        .container, .about-section {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            max-width: 450px;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+            margin: auto;
+        }
+
+        .active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff72ba;
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .invite-btn, .back-btn {
+            background-color: #ff72ba;
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .invite-btn:hover, .back-btn:hover {
+            background-color: #ff52a5;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .invite-btn:active, .back-btn:active {
+            transform: translateY(2px);
+        }
+
+        .about-section {
+            max-width: 700px;
+            text-align: left;
+            margin: auto;
+            overflow-y: auto;
+            padding-right: 20px;
+        }
+
+        .about-section h2 {
+            font-family: 'Pacifico', cursive;
+            color: #4a6fff;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff72ba;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: sparkle 3s infinite ease-in-out;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.1;
+            }
+        }
+
+        .sparkle:nth-child(2) {
+            top: -20px;
+            left: 50%;
+            animation-duration: 3s;
+            animation-delay: 1s;
+        }
+
+        .sparkle:nth-child(3) {
+            bottom: -20px;
+            right: 50px;
+            animation-duration: 4s;
+            animation-delay: 2s;
+        }
+
+        .sparkle:nth-child(4) {
+            top: 30px;
+            left: -30px;
+            animation-duration: 3.5s;
+            animation-delay: 1.5s;
+        }
+
+        .sparkle:nth-child(5) {
+            bottom: 40px;
+            right: -40px;
+            animation-duration: 5s;
+            animation-delay: 2.5s;
+        }
+
+        .sparkle:nth-child(6) {
+            top: -20px;
+            right: 30px;
+            animation-duration: 4.5s;
+            animation-delay: 3s;
+        }
+
+        .sparkle:nth-child(7) {
+            bottom: -20px;
+            left: 50px;
+            animation-duration: 3.2s;
+            animation-delay: 2.2s;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a onclick="showSection('invite')">Invite</a>
+        <a onclick="showSection('about')">About</a>
+    </nav>
+
+    <div class="content">
+        <div id="invite" class="container active">
+            <h1>Invite Musify!</h1>
+            <p>Your ultimate music companion. Add Musify to your server and enjoy seamless music playback.</p>
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1274279936433324033&permissions=0&scope=bot%20applications.commands" class="invite-btn">Invite Musify</a>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+        </div>
+
+        <div id="about" class="about-section">
+            <h2>About Musify</h2>
+            <p>Musify is a feature-rich music bot designed to enhance your Discord experience. Whether you're looking to play your favorite tunes, create playlists, or explore new music, Musify has got you covered.</p>
+            <p>Developed by Bruce Wayne, Musify combines advanced audio technology with a user-friendly interface, making it the perfect companion for any music lover.</p>
+            <p>With a wide range of commands and seamless integration with various music platforms, Musify is your go-to bot for all things music on Discord.</p>
+            <a onclick="showSection('invite')" class="back-btn">Back to Invite</a>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.container, .about-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const sectionToShow = document.getElementById(sectionId);
+            setTimeout(() => {
+                sectionToShow.classList.add('active');
+            }, 50);
+        }
+    </script>
+</body>
+</html>
